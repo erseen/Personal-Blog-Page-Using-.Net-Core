@@ -165,6 +165,10 @@
       "PackagePath": "staticwebassets\\giftos-html\\why.html"
     },
     {
+      "Id": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\img\\background.jpg",
+      "PackagePath": "staticwebassets\\img\\background.jpg"
+    },
+    {
       "Id": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\img\\walpaper.jpg",
       "PackagePath": "staticwebassets\\img\\walpaper.jpg"
     },

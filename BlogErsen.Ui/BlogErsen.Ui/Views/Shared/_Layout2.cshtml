@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/css/site.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>BlogErsen</title>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <title>Renkli Sayfa</title>
+    <style>
+        body {
+            background-image: url('/img/background.jpg');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+       @@media (max-width: 767px) {
+    body {
+                background-image: url('/img/background.jpg');
+                background-size: cover;
+  
+    }
+}
+
+/* Büyük ekranlar için optimizasyon */
+@@ media (min-width: 768px) {
+    body {
+        background-image: url('/img/background.jpg');
+        background-size: cover;
+    }
+}
+        /* Diğer stil tanımlamalarını buraya ekleyebilirsiniz */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        @RenderBody(); 
+    </div>
+</body>
+
+</html>

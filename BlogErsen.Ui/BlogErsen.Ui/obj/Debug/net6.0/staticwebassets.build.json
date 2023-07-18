@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4KxMrsaxVbB05zp6ftRZ8st5Lk2H6znMPWubcdIO2ac=",
+  "Hash": "TGjFFtCwoDVArw1EskAP3oMYqwTtsYe8uSytYA8pJYw=",
   "Source": "BlogErsen.Ui",
   "BasePath": "_content/BlogErsen.Ui",
   "Mode": "Default",
@@ -729,6 +729,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\giftos-html\\why.html"
+    },
+    {
+      "Identity": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\img\\background.jpg",
+      "SourceId": "BlogErsen.Ui",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\",
+      "BasePath": "_content/BlogErsen.Ui",
+      "RelativePath": "img/background.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\background.jpg"
     },
     {
       "Identity": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\img\\walpaper.jpg",

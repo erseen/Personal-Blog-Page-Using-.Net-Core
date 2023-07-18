@@ -1,0 +1,86 @@
+﻿@model RegisterModel
+@{
+    Layout = "_Layout2";
+}
+<style>
+    /* Sayfayı ve body içeriğini dikey ve yatayda tam ortalamak için */
+    html, body {
+        height: 100%;
+    }
+
+    body {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Formun tam genişlikte görünmesini sağlar */
+    .card {
+        width: 100%;
+    }
+</style>
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8 col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Üye Kayıt Formu</h5>
+                    <form asp-controller="Admin" asp-action="Register" method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="form-group row">
+                            <label for="firstName" asp-for="FirstName" class="col-sm-3 col-form-label">First Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" asp-for="FirstName" class="form-control" id="firstName" placeholder="Enter your first name">
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                            <label for="firstName" asp-for="LastName" class="col-sm-3 col-form-label">Last Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" asp-for="LastName" class="form-control" id="lastName" placeholder="Enter your first name">
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                            </div>
+
+                            <label for="userName" asp-for="UserName" class="col-sm-3 col-form-label">User Name</label>
+                            <div class="col-sm-9">
+                                <input type="text" asp-for="UserName" class="form-control" id="userName" placeholder="Enter your first name">
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" asp-for="Email" class="col-sm-3 col-form-label">Email:</label>
+                            <div class="col-sm-9">
+                                <input type="email" asp-for="Email" class="form-control" id="email" placeholder="Enter your email">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="password" asp-for="Password" class="col-sm-3 col-form-label">Password</label>
+                            <div class="col-sm-9">
+                                <input type="password" asp-for=Password class="form-control" id="password" placeholder="Enter your password">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="rePassword" asp-for=RePassword class="col-sm-3 col-form-label">RePassword</label>
+                            <div class="col-sm-9">
+                                <input type="password" asp-for=RePassword class="form-control" id="rePassword" placeholder="Re-enter your password">
+                                <span asp-validation-for="RePassword" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-9 offset-sm-3">
+                                <button type="submit" class="btn btn-primary btn-block">Register</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
