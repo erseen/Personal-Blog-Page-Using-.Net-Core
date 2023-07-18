@@ -1,0 +1,41 @@
+
+header {
+    background-image: url('/img/walpaper.jpg');
+    height: 30vh;
+    min-height: 350px;
+    background-size: cover;
+    background-position: center;
+}
+
+.nav-item .nav-link {
+    color: white;
+    font-size: 18px;
+    font-family: 'Berlin Sans FB';
+}
+
+.container .navbar-brand {
+    color: white;
+    font-size: 30px;
+    font-family: 'Berlin Sans FB';
+}
+
+
+@@media only screen and (min-width: 576px) {
+    .navbar-collapse {
+        background-color: transparent;
+        padding: 0;
+    }
+
+        .navbar-collapse .form-inline {
+            flex-direction: row;
+        }
+
+            .navbar-collapse .form-inline .form-control {
+                margin-bottom: 0;
+                margin-right: 10px;
+            }
+
+            .navbar-collapse .form-inline .btn {
+                width: auto;
+            }
+}

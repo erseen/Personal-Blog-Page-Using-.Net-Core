@@ -1,0 +1,17 @@
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Data\bin\Debug\net6.0\BlogErsen.Data.deps.json
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Data\bin\Debug\net6.0\BlogErsen.Data.runtimeconfig.json
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Data\bin\Debug\net6.0\BlogErsen.Data.dll
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Data\bin\Debug\net6.0\BlogErsen.Data.pdb
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Data\bin\Debug\net6.0\BlogErsen.Entity.dll
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Data\bin\Debug\net6.0\BlogErsen.Entity.pdb
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Data\obj\Debug\net6.0\BlogErsen.Data.csproj.AssemblyReference.cache
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Data\obj\Debug\net6.0\BlogErsen.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Data\obj\Debug\net6.0\BlogErsen.Data.AssemblyInfoInputs.cache
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Data\obj\Debug\net6.0\BlogErsen.Data.AssemblyInfo.cs
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Data\obj\Debug\net6.0\BlogErsen.Data.csproj.CoreCompileInputs.cache
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Data\obj\Debug\net6.0\BlogErsen.Data.csproj.CopyComplete
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Data\obj\Debug\net6.0\BlogErsen.Data.dll
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Data\obj\Debug\net6.0\refint\BlogErsen.Data.dll
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Data\obj\Debug\net6.0\BlogErsen.Data.pdb
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Data\obj\Debug\net6.0\BlogErsen.Data.genruntimeconfig.cache
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Data\obj\Debug\net6.0\ref\BlogErsen.Data.dll
