@@ -4,7 +4,7 @@
 
 namespace BlogErsen.Data.Migrations
 {
-    public partial class createDatabase : Migration
+    public partial class CreateDatabas : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,10 +12,10 @@ namespace BlogErsen.Data.Migrations
                 name: "Categories",
                 columns: table => new
                 {
-                    CategoryId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CategoryDescription = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    CategoryId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    CategoryName = table.Column<string>(type: "TEXT", nullable: false),
+                    CategoryDescription = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -26,14 +26,14 @@ namespace BlogErsen.Data.Migrations
                 name: "Posts",
                 columns: table => new
                 {
-                    PostId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    PostTitle = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Postcontent = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PostPublishedDate = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CategoryId = table.Column<int>(type: "int", nullable: false)
+                    PostId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    PostTitle = table.Column<string>(type: "TEXT", nullable: false),
+                    Postcontent = table.Column<string>(type: "TEXT", nullable: false),
+                    PostPublishedDate = table.Column<string>(type: "TEXT", nullable: false),
+                    UserId = table.Column<int>(type: "INTEGER", nullable: false),
+                    UserName = table.Column<string>(type: "TEXT", nullable: false),
+                    CategoryId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -24,10 +24,11 @@ namespace BlogErsen.Ui.Controllers
         {
             return View();
         }
+        
         [HttpPost]
-        public async  Task<IActionResult> Register(RegisterModel model)
+        public async Task<IActionResult> Register(RegisterModel model)
         {
-            if (ModelState.IsValid) 
+            if (!ModelState.IsValid) 
             {
                 return View(model);
 
@@ -38,7 +39,6 @@ namespace BlogErsen.Ui.Controllers
                 LastName=model.LastName,
                 UserName=model.UserName,
                 Email=model.Email,  
-
             };
 
             var result = await _userManager.CreateAsync(user,model.Password);
@@ -46,9 +46,39 @@ namespace BlogErsen.Ui.Controllers
             {
                 return RedirectToAction("Login", "Admin");
             }
-            return View();
+
+            ModelState.AddModelError("", "Bilinmeyen bir hata oluştu");
+            return View(model);
         }
 
+        [HttpGet]
+        public IActionResult Login ()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginModel model)
+        {
+            if (!ModelState.IsValid) 
+            {
+                return View(model); 
+
+            }
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null) 
+            {
+                ModelState.AddModelError("", "Böyle bir eposta adresi yok ");
+
+            }
+            var result = await _signInManager.PasswordSignInAsync(user, model.Password, true, false);
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            ModelState.AddModelError("", "Şifre veya eposta adresi hatalı");
+            return View(model);
+            
+        }
 
     }
 }

@@ -8,17 +8,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 var services = builder.Services;
-
-services.AddDbContext<ApplicationContext>(options => options.UseSqlite("Data Source = BlogContext"));
+var path2 = "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Data\\BlogContext.db";
+var dbPath = System.IO.Path.Combine(System.AppContext.BaseDirectory, "BlogErsen", "BlogErsen.Ui","BlogErsen.Data","BlogContext.db");
+services.AddDbContext<ApplicationContext>(options => options.UseSqlite($"Data Source = {path2}"));
 services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
 services.Configure<IdentityOptions>(options =>
 {
-    options.Password.RequireDigit = true;
-    options.Password.RequireDigit = true;
+    options.Password.RequireDigit = false;
     options.Password.RequireLowercase = true;
-    options.Password.RequireUppercase = true;
-    options.Password.RequiredLength = 6;
-    options.Password.RequireNonAlphanumeric = true;
     //Lockout
     options.Lockout.MaxFailedAccessAttempts = 5;
     //Oturum açýk kalma süresi 

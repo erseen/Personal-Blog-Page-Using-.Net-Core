@@ -71,18 +71,6 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.0, )"
-            },
-            "TweetinviAPI": {
-              "target": "Package",
-              "version": "[5.0.4, )"
-            },
-            "TwitterSharp": {
-              "target": "Package",
-              "version": "[2.4.0, )"
-            },
-            "linqtotwitter": {
-              "target": "Package",
-              "version": "[6.15.0, )"
             }
           },
           "imports": [
