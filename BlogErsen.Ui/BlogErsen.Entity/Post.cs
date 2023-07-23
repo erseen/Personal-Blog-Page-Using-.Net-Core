@@ -9,11 +9,11 @@ namespace BlogErsen.Entity
     public class Post
     {
         public int PostId { get; set; }
+        public string PostImageUrl { get; set; }
         public string PostTitle { get; set; }
         public string Postcontent { get; set; }
         public string PostPublishedDate { get; set; }
-        public int UserId { get; set; }
-        public string UserName { get; set; }
-        public Category Category { get; set; }
+        public int CategoryId { get; set; }
+       
     }
 }

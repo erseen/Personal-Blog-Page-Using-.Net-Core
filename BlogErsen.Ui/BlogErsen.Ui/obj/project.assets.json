@@ -1129,6 +1129,52 @@
             "rid": "win"
           }
         }
+      },
+      "BlogErsen.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BlogErsen.Entity": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0",
+          "Microsoft.EntityFrameworkCore.Sqlite": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BlogErsen.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlogErsen.Data.dll": {}
+        }
+      },
+      "BlogErsen.Entity/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BlogErsen.Entity.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlogErsen.Entity.dll": {}
+        }
+      },
+      "BlogUi.Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BlogErsen.Data": "1.0.0",
+          "BlogErsen.Entity": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BlogUi.Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlogUi.Business.dll": {}
+        }
       }
     }
   },
@@ -2761,10 +2807,27 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "BlogErsen.Data/1.0.0": {
+      "type": "project",
+      "path": "../BlogErsen.Data/BlogErsen.Data.csproj",
+      "msbuildProject": "../BlogErsen.Data/BlogErsen.Data.csproj"
+    },
+    "BlogErsen.Entity/1.0.0": {
+      "type": "project",
+      "path": "../BlogErsen.Entity/BlogErsen.Entity.csproj",
+      "msbuildProject": "../BlogErsen.Entity/BlogErsen.Entity.csproj"
+    },
+    "BlogUi.Business/1.0.0": {
+      "type": "project",
+      "path": "../BlogUi.Business/BlogUi.Business.csproj",
+      "msbuildProject": "../BlogUi.Business/BlogUi.Business.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BlogErsen.Entity >= 1.0.0",
+      "BlogUi.Business >= 1.0.0",
       "DocumentFormat.OpenXml >= 2.20.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.0",
       "Microsoft.EntityFrameworkCore >= 6.0.0",
@@ -2800,7 +2863,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Entity\\BlogErsen.Entity.csproj": {
+              "projectPath": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Entity\\BlogErsen.Entity.csproj"
+            },
+            "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogUi.Business\\BlogUi.Business.csproj": {
+              "projectPath": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogUi.Business\\BlogUi.Business.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

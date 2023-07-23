@@ -1,4 +1,8 @@
+using BlogErsen.Data.Abstract;
+using BlogErsen.Data.Concrete;
 using BlogErsen.Ui.Identity;
+using BlogUi.Business.Abstract;
+using BlogUi.Business.Concrete;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
@@ -8,8 +12,17 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 var services = builder.Services;
+
+
+/// Dependecy Injection////////////////
+services.AddScoped<ICategoryDal, EfCoreCategoryDal>();
+services.AddScoped<IPostDal, EfCorePostDal>();
+services.AddScoped<ICategoryService, CategoryManager>();
+services.AddScoped<IPostService, PostManager>();
+///////////////////////////////////////
+
+//Identity Kütüphanesi Config ////////////////////////
 var path2 = "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Data\\BlogContext.db";
-var dbPath = System.IO.Path.Combine(System.AppContext.BaseDirectory, "BlogErsen", "BlogErsen.Ui","BlogErsen.Data","BlogContext.db");
 services.AddDbContext<ApplicationContext>(options => options.UseSqlite($"Data Source = {path2}"));
 services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<ApplicationContext>().AddDefaultTokenProviders();
 services.Configure<IdentityOptions>(options =>
@@ -26,7 +39,7 @@ services.Configure<IdentityOptions>(options =>
     options.SignIn.RequireConfirmedPhoneNumber = false;
 
 });
-
+//////////////////////////////////////////////////////////////////
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

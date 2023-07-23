@@ -22,4 +22,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BlogErsen.Entity\BlogErsen.Entity.csproj" />
+    <ProjectReference Include="..\BlogUi.Business\BlogUi.Business.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -7,7 +7,6 @@ namespace BlogErsen.Ui.Identity
     {
         public ApplicationContext(DbContextOptions<ApplicationContext> options):base(options)
         {
-                
         }
     }
 }

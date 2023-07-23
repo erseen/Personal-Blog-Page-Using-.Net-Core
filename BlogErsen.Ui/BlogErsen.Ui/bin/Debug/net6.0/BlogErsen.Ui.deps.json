@@ -8,6 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "BlogErsen.Ui/1.0.0": {
         "dependencies": {
+          "BlogErsen.Entity": "1.0.0",
+          "BlogUi.Business": "1.0.0",
           "DocumentFormat.OpenXml": "2.20.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.0",
@@ -653,6 +655,37 @@
             "fileVersion": "4.700.19.56404"
           }
         }
+      },
+      "BlogErsen.Data/1.0.0": {
+        "dependencies": {
+          "BlogErsen.Entity": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0",
+          "Microsoft.EntityFrameworkCore.Sqlite": "6.0.0"
+        },
+        "runtime": {
+          "BlogErsen.Data.dll": {}
+        }
+      },
+      "BlogErsen.Entity/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0"
+        },
+        "runtime": {
+          "BlogErsen.Entity.dll": {}
+        }
+      },
+      "BlogUi.Business/1.0.0": {
+        "dependencies": {
+          "BlogErsen.Data": "1.0.0",
+          "BlogErsen.Entity": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "6.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0"
+        },
+        "runtime": {
+          "BlogUi.Business.dll": {}
+        }
       }
     }
   },
@@ -1095,6 +1128,21 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "BlogErsen.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BlogErsen.Entity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BlogUi.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

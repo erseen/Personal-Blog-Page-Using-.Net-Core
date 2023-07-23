@@ -14,7 +14,7 @@ namespace BlogErsen.Data.Concrete
         public DbSet<Category> Categories { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=BlogContext.db");
+            optionsBuilder.UseSqlite("Data Source=C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Data\\BlogContext.db");
         }
     }
 }

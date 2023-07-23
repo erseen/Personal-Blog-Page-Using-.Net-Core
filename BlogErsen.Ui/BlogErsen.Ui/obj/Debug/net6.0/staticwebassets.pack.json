@@ -5,6 +5,18 @@
       "PackagePath": "staticwebassets\\BlogErsen.Ui.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\css\\dashboard.css",
+      "PackagePath": "staticwebassets\\css\\dashboard.css"
+    },
+    {
+      "Id": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\css\\dashboard.rtl.css",
+      "PackagePath": "staticwebassets\\css\\dashboard.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\css\\panel.css",
+      "PackagePath": "staticwebassets\\css\\panel.css"
+    },
+    {
       "Id": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -171,6 +183,10 @@
     {
       "Id": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\img\\walpaper.jpg",
       "PackagePath": "staticwebassets\\img\\walpaper.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\js\\dashboard.js",
+      "PackagePath": "staticwebassets\\js\\dashboard.js"
     },
     {
       "Id": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\js\\site.js",

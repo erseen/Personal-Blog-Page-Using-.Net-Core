@@ -87,3 +87,9 @@ C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Ui\bin\Debug\net6.0\runt
 C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Ui\bin\Debug\net6.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Ui\bin\Debug\net6.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Ui\bin\Debug\net6.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Ui\bin\Debug\net6.0\BlogErsen.Entity.dll
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Ui\bin\Debug\net6.0\BlogErsen.Entity.pdb
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Ui\bin\Debug\net6.0\BlogErsen.Data.dll
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Ui\bin\Debug\net6.0\BlogUi.Business.dll
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Ui\bin\Debug\net6.0\BlogUi.Business.pdb
+C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Ui\bin\Debug\net6.0\BlogErsen.Data.pdb

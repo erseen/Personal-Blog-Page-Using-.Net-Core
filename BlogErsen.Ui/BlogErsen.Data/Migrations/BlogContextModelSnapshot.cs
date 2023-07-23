@@ -22,10 +22,6 @@ namespace BlogErsen.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("CategoryDescription")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("CategoryName")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -44,6 +40,10 @@ namespace BlogErsen.Data.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("PostImageUrl")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("PostPublishedDate")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -56,34 +56,9 @@ namespace BlogErsen.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("UserName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.HasKey("PostId");
 
-                    b.HasIndex("CategoryId");
-
                     b.ToTable("Posts");
-                });
-
-            modelBuilder.Entity("BlogErsen.Entity.Post", b =>
-                {
-                    b.HasOne("BlogErsen.Entity.Category", "Category")
-                        .WithMany("Posts")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("BlogErsen.Entity.Category", b =>
-                {
-                    b.Navigation("Posts");
                 });
 #pragma warning restore 612, 618
         }
