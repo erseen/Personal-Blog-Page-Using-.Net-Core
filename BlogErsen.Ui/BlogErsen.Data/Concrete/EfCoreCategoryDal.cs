@@ -8,8 +8,15 @@ using System.Threading.Tasks;
 
 namespace BlogErsen.Data.Concrete
 {
-    public class EfCoreCategoryDal:
+    public class EfCoreCategoryDal :
          EfCoreGenericDal<Category, BlogContext>, ICategoryDal
     {
+        public int GetAllCategoriesCount()
+        {
+            using (var context = new BlogContext())
+            {
+                return context.Categories.Count(); 
+            }
+        }
     }
 }

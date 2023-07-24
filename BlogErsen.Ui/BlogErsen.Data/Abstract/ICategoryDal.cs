@@ -9,5 +9,6 @@ namespace BlogErsen.Data.Abstract
 {
     public interface ICategoryDal:IGenericDal<Category>
     {
+        int GetAllCategoriesCount();
     }
 }

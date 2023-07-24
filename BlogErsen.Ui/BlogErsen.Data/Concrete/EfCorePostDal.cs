@@ -8,8 +8,15 @@ using System.Threading.Tasks;
 
 namespace BlogErsen.Data.Concrete
 {
-    public class EfCorePostDal:
-           EfCoreGenericDal<Post, BlogContext>,IPostDal
+    public class EfCorePostDal :
+           EfCoreGenericDal<Post, BlogContext>, IPostDal
     {
+        public int GetAllPostCount()
+        {
+            using (var context = new BlogContext())
+            {
+                return context.Posts.Count();
+            }
+        }
     }
 }

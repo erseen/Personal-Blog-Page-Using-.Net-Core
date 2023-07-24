@@ -31,6 +31,11 @@ namespace BlogUi.Business.Concrete
             return _categoryDal.GetAll();
         }
 
+        public int GetAllCategoriesCount()
+        {
+            return _categoryDal.GetAllCategoriesCount();    
+        }
+
         public Category GetById(int id)
         {
             return _categoryDal.GetById(id);

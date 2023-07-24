@@ -14,11 +14,8 @@ namespace BlogErsen.Ui.Models
         [Required]
         public string PostPublishedDate { get; set; }
         public int CategoryId { get; set; }
+        public string CategoryName { get; set; }
 
-        [Required]
-        public List<Category> Categories { get; set; }
-        [Required]
-        // Seçilen kategori bilgisini almak için yeni bir özellik ekleyin
-        public int SelectedCategoryId { get; set; }
+
     }
 }

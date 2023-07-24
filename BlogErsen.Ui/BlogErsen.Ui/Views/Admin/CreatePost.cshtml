@@ -3,7 +3,7 @@
  
 @{
     string message = ViewBag.Message;
-    var PostCategories = ViewBag.Categories as List<Category>;
+   
     Layout = "_Layout3";
 }
 
@@ -41,7 +41,6 @@
 
         <h2 align="center">Paylaş</h2>
         <form method="post"  asp-action="createpost" asp-controller="admin">
-            <input type="hidden" name="CategoryId" value="@Model.Categories">
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="mb-3">
                 <label for="PostTitle" class="form-label">Başlık</label>
@@ -60,17 +59,15 @@
             </div>
           
             <div class="mb-3">
-
-                <label asp-for="SelectedCategoryId" class="form-label">Kategori</label>
-                <select asp-for="SelectedCategoryId" class="form-control" required>
-                    <option value="">Lütfen bir kategori seçiniz</option>
-                    @foreach (var category in PostCategories)
-                    {
+                <select class="form-control" asp-for="CategoryId">
+                 <label class="form-label">Kategori</label>
+                 <option value="">Lütfen bir kategori seçiniz</option>
+                @foreach (var category in ViewBag.Categories)
+                {
                         <option value="@category.CategoryId">@category.CategoryName</option>
-                    }
-                </select>
+                }
 
-                <input type="hidden" asp-for="CategoryId" />
+                </select>
             </div>
             <button type="submit" class="btn btn-primary">Kaydet</button>
         </form>

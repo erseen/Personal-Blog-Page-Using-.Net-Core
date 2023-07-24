@@ -32,6 +32,11 @@ namespace BlogUi.Business.Concrete
          return   _postDal.GetAll();
         }
 
+        public int GetAllPostCount()
+        {
+            return _postDal.GetAllPostCount();
+        }
+
         public Post GetById(int id)
         {
            return _postDal.GetById(id);

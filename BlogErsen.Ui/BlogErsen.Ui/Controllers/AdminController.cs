@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
 using ChartData = BlogErsen.Ui.Models.ChartData;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BlogErsen.Ui.Controllers
 {
@@ -92,18 +93,22 @@ namespace BlogErsen.Ui.Controllers
             return View(model);
             
         }
+        [HttpGet]
         public IActionResult Panel()
         {
             // Verileri oluşturun (örnek olarak rastgele veriler kullanıyoruz)
-            var chartDataList = new List<ChartData>
-            {
-                new ChartData { Label = "Veri 1", Value = 75 },
-                new ChartData { Label = "Veri 2", Value = 60 },
-                new ChartData { Label = "Veri 3", Value = 45 },
-                new ChartData { Label = "Veri 4", Value = 30 }
-            };
-            // View'e verileri gönderin
-            return View(chartDataList);
+            //var chartDataList = new List<ChartData>
+            //{
+            //    new ChartData { Label = "Veri 1", Value = 75 },
+            //    new ChartData { Label = "Veri 2", Value = 60 },
+            //    new ChartData { Label = "Veri 3", Value = 45 },
+            //    new ChartData { Label = "Veri 4", Value = 30 }
+            //};
+            //chartDataList
+            //// View'e verileri gönderin
+            ViewBag.TotalPostCount = _postService.GetAllPostCount();
+            ViewBag.TotalCategoriesCount = _categoryService.GetAllCategoriesCount();
+            return View();
         }
         public async Task <IActionResult> Logout ()
         {
@@ -113,13 +118,16 @@ namespace BlogErsen.Ui.Controllers
         [HttpGet]
         public IActionResult CreatePost()
         {
-           ViewBag.Categories= Enum.GetValues(typeof(Category)).Cast<Category>().ToList();
+            ViewBag.Message = "";
+            ViewBag.Categories = _categoryService.GetAll();
             return View();
         }
         [HttpPost]
         public IActionResult CreatePost(PostModel model)
         {
-         
+            ViewBag.Categories = _categoryService.GetAll();
+
+
             if (!ModelState.IsValid)
             {
                 return View(model);
@@ -131,13 +139,16 @@ namespace BlogErsen.Ui.Controllers
                 PostTitle = model.PostTitle,
                 Postcontent = model.Postcontent,
                 PostPublishedDate = model.PostPublishedDate,
-                CategoryId=model.CategoryId,
+                CategoryId = model.CategoryId,
+              
+                
                
             };
             try
             {
                 _postService.Create(entity);
                 ViewBag.Message = "success";
+                return RedirectToAction("CreatePost", "Admin");
             }
             catch (Exception)
             {
@@ -145,6 +156,11 @@ namespace BlogErsen.Ui.Controllers
                 ViewBag.Message = "danger"; 
             }
            
+            return View();
+        }
+
+        public IActionResult PostList()
+        {
             return View();
         }
       
