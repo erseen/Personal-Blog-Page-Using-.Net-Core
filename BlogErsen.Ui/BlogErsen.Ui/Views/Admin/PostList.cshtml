@@ -1,0 +1,28 @@
+﻿@model PostViewModel
+@{
+    Layout = "_Layout3";
+}
+<div class="row">
+    @foreach (var post in Model.Posts)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="d-flex align-items-center">
+                    <img class="img-fluid" src="~/img/@post.PostImageUrl" alt="@post.PostTitle">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@post.PostTitle</h5>
+                    <h6 class="card-text"> Yayımlanma Tarihi : @post.PostPublishedDate</h6>
+                    <p> Konu Özeti @post.PostShortDescription</p>
+                    <a asp-controller="Admin" asp-action="Details" asp-route-id="@post.PostId" class="btn btn-primary btn-sm">Devamını Oku </a>
+                    <a href="/Admin/PostUpdate/@post.PostId" class="btn btn-primary btn-sm mr-2">Duzenle</a>
+                    <form method="POST" action="/Admin/DeletePost" style="display: inline;">
+                        <input type="hidden" name="PostId" value="@post.PostId">
+                        <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

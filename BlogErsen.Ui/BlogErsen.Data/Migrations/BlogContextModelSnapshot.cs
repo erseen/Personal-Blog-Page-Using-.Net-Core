@@ -40,7 +40,15 @@ namespace BlogErsen.Data.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("PostImageUrl")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("PostPublishedDate")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PostShortDescription")
                         .IsRequired()
                         .HasColumnType("TEXT");
 

@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Net.Http.Headers;
 using ChartData = BlogErsen.Ui.Models.ChartData;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using BlogErsen.Ui.ViewModels;
+using System.Reflection.Metadata.Ecma335;
 
 namespace BlogErsen.Ui.Controllers
 {
@@ -125,25 +127,29 @@ namespace BlogErsen.Ui.Controllers
         [HttpPost]
         public IActionResult CreatePost(PostModel model)
         {
-            ViewBag.Categories = _categoryService.GetAll();
-
-
             if (!ModelState.IsValid)
             {
                 return View(model);
 
             }
-
-            var entity = new Post()
+            var entity = new Post();
+            ViewBag.Categories = _categoryService.GetAll();
+             if(model.PostImageUrl!= null) 
             {
-                PostTitle = model.PostTitle,
-                Postcontent = model.Postcontent,
-                PostPublishedDate = model.PostPublishedDate,
-                CategoryId = model.CategoryId,
-              
-                
-               
-            };
+            var extension = Path.GetExtension(model.PostImageUrl.FileName);
+            var newimagename = Guid.NewGuid() + extension;
+            var location = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot/img/",newimagename);
+            var stream = new FileStream(location, FileMode.Create);
+            model.PostImageUrl.CopyTo(stream);
+            entity.PostImageUrl = newimagename;
+            }
+
+            entity.PostTitle = model.PostTitle;
+            entity.PostShortDescription= model.PostShortDescription;    
+            entity.Postcontent = model.Postcontent;
+            entity.PostPublishedDate = model.PostPublishedDate;
+            entity.CategoryId = model.CategoryId;
+
             try
             {
                 _postService.Create(entity);
@@ -158,11 +164,38 @@ namespace BlogErsen.Ui.Controllers
            
             return View();
         }
-
+        
+        [HttpGet]
         public IActionResult PostList()
         {
+            var postViewModel = new PostViewModel()
+            {
+                Posts = _postService.GetAll()
+            };
+            return View(postViewModel);
+        }
+        public IActionResult DeletePost(int postId)
+        {
+            var entity =_postService.GetById(postId);
+            if(entity!=null)
+            {
+                _postService.Delete(entity);
+                return RedirectToAction("PostList", "Admin");
+
+            }
             return View();
         }
-      
+        [HttpGet]
+        public IActionResult Details(int id ) 
+        {
+            var postDetailsViewModel = new PostDetailsModel()
+            {
+                Post = _postService.GetById(id)
+            };
+
+            return View(postDetailsViewModel);
+        }
+
+
     }
 }

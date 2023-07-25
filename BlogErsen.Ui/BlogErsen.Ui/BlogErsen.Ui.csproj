@@ -27,8 +27,4 @@
     <ProjectReference Include="..\BlogUi.Business\BlogUi.Business.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-
 </Project>

@@ -12,10 +12,12 @@ namespace BlogErsen.Ui.Models
         [Required]
         public string Postcontent { get; set; }
         [Required]
+        public string PostShortDescription { get; set; }
+        [Required]
         public string PostPublishedDate { get; set; }
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
-
+        public IFormFile  PostImageUrl { get; set; }
 
     }
 }

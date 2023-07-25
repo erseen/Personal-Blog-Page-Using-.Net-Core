@@ -38,9 +38,8 @@
             </div>
         }
 
-
         <h2 align="center">Paylaş</h2>
-        <form method="post"  asp-action="createpost" asp-controller="admin">
+        <form method="post" asp-action="createpost" asp-controller="admin" enctype="multipart/form-data">
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="mb-3">
                 <label for="PostTitle" class="form-label">Başlık</label>
@@ -48,10 +47,24 @@
                 <span asp-validation-for="PostTitle"></span>
             </div>
             <div class="mb-3">
+                <label for="PostContent" class="form-label">Konu Özeti</label>
+                <textarea class="form-control" asp-for="PostShortDescription" name="PostShortDescription" rows="4" required></textarea>
+                <span asp-validation-for="Postcontent"></span>
+            </div>
+            <div class="mb-3">
                 <label for="PostContent" class="form-label">Konu İçeriği</label>
                 <textarea class="form-control" asp-for="Postcontent" id="editor" name="PostContent" rows="4" required></textarea>
                 <span asp-validation-for="Postcontent"></span>
             </div>
+             @*Image Tarafı *@
+             <div class="mb-3">
+                <label asp-for="PostImageUrl">Resim Seç:</label>
+                <input asp-for="PostImageUrl" type="file" class="form-control-file">
+                <span asp-validation-for="PostImageUrl" class="text-danger"></span>
+            </div>
+   
+             
+            @* Image Tarafı*@ 
             <div class="mb-3">
                 <label for="PostPublishedDate" class="form-label">Paylaşım Zamanı</label>
                 <input type="text" asp-for="PostPublishedDate" class="form-control" id="PostPublishedDate" name="PostPublishedDate" required>

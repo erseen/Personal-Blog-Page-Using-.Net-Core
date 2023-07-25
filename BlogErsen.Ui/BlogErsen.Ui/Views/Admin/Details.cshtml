@@ -1,0 +1,30 @@
+﻿@model PostDetailsModel 
+@{
+    Layout = "_Layout3";
+}
+<style>
+img{
+    height:200px; 
+    width:100%;
+}
+h1{
+   
+}
+
+</style>
+
+        <div class="row">
+        <h1 align="center">@Model.Post.PostTitle </h1>
+        <hr />
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <img src="/img/@Model.Post.PostImageUrl"  />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                @Html.Raw(Model.Post.Postcontent)
+            </div>
+        </div>
