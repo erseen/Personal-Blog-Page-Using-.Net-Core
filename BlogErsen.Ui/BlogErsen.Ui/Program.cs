@@ -58,6 +58,10 @@ app.UseAuthentication();
 
 app.MapControllerRoute(
     name: "default",
+    pattern: "{controller=Admin}/{action=PostUpdate}/{id?}");
+
+app.MapControllerRoute(
+    name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

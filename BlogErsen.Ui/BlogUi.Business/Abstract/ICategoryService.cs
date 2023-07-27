@@ -15,5 +15,7 @@ namespace BlogUi.Business.Abstract
         void Update(Category entity);
         void Delete(Category entity);
         int GetAllCategoriesCount();
+        string GetCategoryNameById(int id);
+
     }
 }

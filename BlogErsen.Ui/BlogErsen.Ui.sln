@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogErsen.Ui", "BlogErsen.Ui\BlogErsen.Ui.csproj", "{5E40F42E-D9B1-46F6-BA05-673BB03CF592}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogErsen.Ui", "BlogErsen.Ui\BlogErsen.Ui.csproj", "{5E40F42E-D9B1-46F6-BA05-673BB03CF592}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogErsen.Data", "BlogErsen.Data\BlogErsen.Data.csproj", "{A684BC6A-0C1B-4E4F-B52C-41FD6BBBF542}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogErsen.Data", "BlogErsen.Data\BlogErsen.Data.csproj", "{A684BC6A-0C1B-4E4F-B52C-41FD6BBBF542}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogUi.Business", "BlogUi.Business\BlogUi.Business.csproj", "{E69B1C44-B601-44F4-A029-ACF737EBEFD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogUi.Business", "BlogUi.Business\BlogUi.Business.csproj", "{E69B1C44-B601-44F4-A029-ACF737EBEFD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogErsen.Entity", "BlogErsen.Entity\BlogErsen.Entity.csproj", "{EE60D085-9690-4BCD-A494-13481B6651C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogErsen.Entity", "BlogErsen.Entity\BlogErsen.Entity.csproj", "{EE60D085-9690-4BCD-A494-13481B6651C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

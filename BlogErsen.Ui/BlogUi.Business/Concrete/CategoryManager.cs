@@ -41,6 +41,11 @@ namespace BlogUi.Business.Concrete
             return _categoryDal.GetById(id);
         }
 
+        public string GetCategoryNameById(int id)
+        {
+            return _categoryDal.GetCategoryNameById(id);
+        }
+
         public void Update(Category entity)
         {
             _categoryDal.Update(entity);

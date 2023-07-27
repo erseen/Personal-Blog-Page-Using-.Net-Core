@@ -11,6 +11,8 @@ using ChartData = BlogErsen.Ui.Models.ChartData;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using BlogErsen.Ui.ViewModels;
 using System.Reflection.Metadata.Ecma335;
+using Microsoft.AspNetCore.Razor.TagHelpers;
+using DocumentFormat.OpenXml.Office2010.Excel;
 
 namespace BlogErsen.Ui.Controllers
 {
@@ -141,6 +143,7 @@ namespace BlogErsen.Ui.Controllers
             var location = Path.Combine(Directory.GetCurrentDirectory(),"wwwroot/img/",newimagename);
             var stream = new FileStream(location, FileMode.Create);
             model.PostImageUrl.CopyTo(stream);
+
             entity.PostImageUrl = newimagename;
             }
 
@@ -164,7 +167,6 @@ namespace BlogErsen.Ui.Controllers
            
             return View();
         }
-        
         [HttpGet]
         public IActionResult PostList()
         {
@@ -194,6 +196,71 @@ namespace BlogErsen.Ui.Controllers
             };
 
             return View(postDetailsViewModel);
+        }
+       
+        
+        
+        [HttpGet]
+        public IActionResult PostUpdate(int id )
+        {
+            ViewBag.Categories = _categoryService.GetAll();
+
+           
+            var entity = _postService.GetById(id);
+            if (entity==null)
+            {
+                return NotFound();
+             
+            }
+            var postmodel = new PostModel()
+            {
+                PostId = entity.PostId,
+                PostTitle = entity.PostTitle,
+                PostShortDescription = entity.PostShortDescription,
+                PostPublishedDate = entity.PostPublishedDate,
+                Postcontent = entity.Postcontent,
+                ImageUrl = entity.PostImageUrl,
+                CategoryId = entity.CategoryId,
+
+            };
+            return View(postmodel);
+        }
+
+
+        [HttpPost]
+        public IActionResult PostUpdate(PostModel model,IFormFile file)
+        {
+            ViewBag.Categories = _categoryService.GetAll();
+            var entity = _postService.GetById(model.PostId);
+            if (entity == null)
+            {
+                return NotFound();
+
+            }
+            entity.PostTitle = model.PostTitle;
+            entity.PostShortDescription = model.PostShortDescription;
+            entity.Postcontent = model.Postcontent;
+            entity.PostPublishedDate = model.PostPublishedDate;
+
+            if (model.CategoryId!=entity.CategoryId) 
+            {
+                entity.CategoryId = model.CategoryId;
+            
+            }
+           
+
+            if(model.PostImageUrl!=null)
+            {
+                var extension = Path.GetExtension(model.PostImageUrl.FileName);
+                var newimagename = Guid.NewGuid() + extension;
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/", newimagename);
+                var stream = new FileStream(location, FileMode.Create);
+                model.PostImageUrl.CopyTo(stream);
+                entity.PostImageUrl = newimagename;
+            }
+            _postService.Update(entity);
+            return RedirectToAction("PostList");
+
         }
 
 
