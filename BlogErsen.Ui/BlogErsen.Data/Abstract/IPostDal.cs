@@ -10,6 +10,7 @@ namespace BlogErsen.Data.Abstract
     public interface IPostDal:IGenericDal<Post>
     {
         int GetAllPostCount();
+        List<Post> GetPostByComment();
 
     }
 }

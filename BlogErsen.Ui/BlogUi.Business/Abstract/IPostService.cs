@@ -16,5 +16,6 @@ namespace BlogUi.Business.Abstract
         void Update(Post entity);
         void Delete(Post entity);
         int GetAllPostCount();
+        List<Post> GetPostByComment();
     }
 }

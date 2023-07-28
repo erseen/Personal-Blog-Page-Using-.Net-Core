@@ -15,6 +15,7 @@ namespace BlogErsen.Entity
         public string PostShortDescription { get; set; }
         public string Postcontent { get; set; }
         public string PostPublishedDate { get; set; }
+        public List<Comment> Comments { get; set; }
         public int CategoryId { get; set; }
      
 

@@ -19,6 +19,8 @@ services.AddScoped<ICategoryDal, EfCoreCategoryDal>();
 services.AddScoped<IPostDal, EfCorePostDal>();
 services.AddScoped<ICategoryService, CategoryManager>();
 services.AddScoped<IPostService, PostManager>();
+services.AddScoped<ICommentDal, EfCoreCommentDal>();
+services.AddScoped<ICommentService, CommentManager>();
 ///////////////////////////////////////
 
 //Identity Kütüphanesi Config ////////////////////////

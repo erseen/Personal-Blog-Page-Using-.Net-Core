@@ -1,5 +1,6 @@
 ﻿using BlogErsen.Data.Abstract;
 using BlogErsen.Entity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,19 @@ namespace BlogErsen.Data.Concrete
             using (var context = new BlogContext())
             {
                 return context.Posts.Count();
+            }
+        }
+
+        public List<Post> GetPostByComment()
+        {
+            using (var context = new BlogContext())
+            {
+                var GetPostByComment = context.Posts
+             .Where(post => context.Comments.Any(comment => comment.PostId == post.PostId))
+             .ToList();
+
+                return GetPostByComment;
+
             }
         }
     }

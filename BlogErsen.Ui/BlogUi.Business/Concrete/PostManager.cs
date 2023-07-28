@@ -42,6 +42,11 @@ namespace BlogUi.Business.Concrete
            return _postDal.GetById(id);
         }
 
+        public List<Post> GetPostByComment()
+        {
+            return _postDal.GetPostByComment();
+        }
+
         public void Update(Post entity)
         {
             _postDal.Update(entity);

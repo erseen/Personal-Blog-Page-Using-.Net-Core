@@ -20,21 +20,23 @@ namespace BlogErsen.Ui.Controllers
     public class AdminController : Controller
     {
         private readonly IPostService  _postService;
-        private readonly ICategoryService _categoryService; 
-
+        private readonly ICategoryService _categoryService;
+        private readonly ICommentService _commentService;
         private readonly UserManager<User> _userManager; 
         private readonly SignInManager<User> _signInManager;
         public AdminController(UserManager<User> userManager,
         SignInManager<User> signInManager,
         IPostService postService,
-        ICategoryService categoryService
+        ICategoryService categoryService,
+        ICommentService commentService
         )
 
         {
             _userManager= userManager;
             _postService = postService; 
             _signInManager= signInManager;
-            _categoryService = categoryService; 
+            _categoryService = categoryService;
+            _commentService = commentService;
 
         }
         [HttpGet]
@@ -262,7 +264,44 @@ namespace BlogErsen.Ui.Controllers
             return RedirectToAction("PostList");
 
         }
+        [HttpPost]
+        public IActionResult AddComment(int postId, string name, string commentText)
+        {
+
+            try
+            {
+                var newComment = new Entity.Comment()
+                {
+                    PostId = postId,
+                    Name = name,
+                    CommendText = commentText,
+                    IsApproved = false,
+                    CommentDate = DateTime.Now,
 
 
+                };
+
+                _commentService.Create(newComment);
+                return Json(new { success = true, message = "Yorum başarıyla eklendi!" });
+            }
+            catch (Exception ex)
+            {
+
+                return Json(new { success = false, message = "Yorum eklenirken bir hata oluştu: " + ex.Message });
+            }
+
+
+        }
+
+        [HttpGet]
+        public IActionResult Comments()
+        {
+            var model = new CommentViewModel
+            {
+                Comments = _commentService.GetAll(),
+                PostByComments=_postService.GetPostByComment()
+            };
+            return View(model);
+        }
     }
 }

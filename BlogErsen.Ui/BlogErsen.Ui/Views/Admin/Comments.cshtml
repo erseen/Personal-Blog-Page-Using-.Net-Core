@@ -1,0 +1,32 @@
+﻿@model CommentViewModel
+@{
+    Layout="_Layout3"; 
+    var postByComment=Model.PostByComments; 
+}
+
+<h4 align="center"> Yorumlar </h4>
+
+@foreach (var comment in Model.Comments)
+{
+    var post = Model.PostByComments.FirstOrDefault(p => p.PostId == comment.PostId);
+    <div class="row">
+        <div class="col-md-3">
+            @if (post != null)
+            {
+                <h2>@post.PostTitle</h2>
+            }
+            <strong>@comment.Name</strong>
+        </div>
+        <div class="col-md-6">
+            <textarea class="form-control" rows="4" required>@comment.CommendText</textarea>
+        </div>
+        <div class="col-md-3">
+            <label>
+                <input type="checkbox" @(comment.IsApproved ? "checked" : "") disabled />
+                Sayfada Göster
+            </label>
+            <button class="btn btn-primary" type="submit">Kaydet</button>
+        </div>
+    </div>
+    <hr />
+}

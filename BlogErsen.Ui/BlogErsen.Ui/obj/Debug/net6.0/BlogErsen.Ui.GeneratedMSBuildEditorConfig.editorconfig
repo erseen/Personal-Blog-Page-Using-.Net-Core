@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\ersen\Desktop\BlogErsen\BlogErsen.Ui\BlogErsen.Ui
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/ersen/Desktop/BlogErsen/BlogErsen.Ui/BlogErsen.Ui/Views/Admin/Comments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ29tbWVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ersen/Desktop/BlogErsen/BlogErsen.Ui/BlogErsen.Ui/Views/Admin/CreatePost.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlUG9zdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
