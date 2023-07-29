@@ -6,27 +6,81 @@
 
 <h4 align="center"> Yorumlar </h4>
 
-@foreach (var comment in Model.Comments)
-{
-    var post = Model.PostByComments.FirstOrDefault(p => p.PostId == comment.PostId);
-    <div class="row">
-        <div class="col-md-3">
-            @if (post != null)
-            {
-                <h2>@post.PostTitle</h2>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Post Başlığı</th>
+                <th scope="col">Post Özeti</th>
+                <th scope="col">İsim</th>
+                <th scope="col">Yorum</th>
+                <th scope="col">Anasayfada Göster</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var comment in Model.Comments)
+        {
+            var post = Model.PostByComments.FirstOrDefault(p => p.PostId == comment.PostId);
+            var commendId= @comment.CommentId;
+            var IsApproved = @comment.IsApproved;
+            <tr>
+                <td>@post.PostTitle</td>
+                <td>@post.PostShortDescription</td>
+                <td>@comment.Name</td>
+                <td><textarea class="form-control" rows="2" required>@comment.CommendText</textarea></td>
+                <td>
+ 
+                 @*   <form id="updateCommentForm">
+                        <input type="checkbox"  asp-for="@comment.IsApproved" id="IsApprovedCheckbox" class="custom-control-input">
+                        <label for="IsApprovedCheckbox" class="custom-control-label"></label>
+                        <button type="button" class="btn btn-primary" onclick="submitComment()" align="center">Kaydet</button>
+                    </form>*@
+
+                    <form id="updateCommentForm-@commendId">
+                        <input type="checkbox" asp-for="@comment.IsApproved" id="IsApprovedCheckbox-@commendId" class="custom-control-input">
+                        <label for="IsApprovedCheckbox-@commendId" class="custom-control-label"></label>
+                        <button type="button" class="btn btn-primary" onclick="submitComment('@commendId')" align="center">Kaydet</button>
+                    </form>
+                </td>
+            </tr>
+          
             }
-            <strong>@comment.Name</strong>
-        </div>
-        <div class="col-md-6">
-            <textarea class="form-control" rows="4" required>@comment.CommendText</textarea>
-        </div>
-        <div class="col-md-3">
-            <label>
-                <input type="checkbox" @(comment.IsApproved ? "checked" : "") disabled />
-                Sayfada Göster
-            </label>
-            <button class="btn btn-primary" type="submit">Kaydet</button>
-        </div>
-    </div>
-    <hr />
-}
+        <script>
+            function submitComment(commentId) {
+                var isApproved = $(`#IsApprovedCheckbox-${commentId}`).is(':checked'); // Checkbox durumunu alın
+
+                // AJAX isteği için verileri hazırlayın
+                var data = {
+                    CommentId: commentId,
+                    IsApproved: isApproved
+                };
+
+                // AJAX isteğini gönderin
+                $.ajax({
+                    url: '/Admin/UpdateComment',
+                    type: 'POST',
+                    data: data,
+                    success: function (result) {
+                        if (result.success) {
+                            alert(result.message); // Başarılı mesajı gösterin
+
+                            // Yorum eklemesi başarılıysa, sayfayı yenileyebilir veya yeni yorumları listelemek için başka işlemler yapabilirsiniz.
+                            // Örneğin, sayfayı yenilemek için:
+                            location.reload();
+                        } else {
+                            alert('Yorum güncelleme işlemi sırasında bir hata oluştu.'); // Hata mesajı gösterin
+                        }
+                    },
+                    error: function () {
+                        alert('Yorum güncelleme işlemi sırasında bir hata oluştu.'); // Hata mesajı gösterin
+                    }
+                });
+            }
+        </script>
+
+        </tbody>
+    </table>
+
+
+
+

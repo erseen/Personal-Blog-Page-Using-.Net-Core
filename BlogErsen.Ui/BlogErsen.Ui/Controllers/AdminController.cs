@@ -189,7 +189,10 @@ namespace BlogErsen.Ui.Controllers
             }
             return View();
         }
-        [HttpGet]
+       
+        
+        
+       
         public IActionResult Details(int id ) 
         {
             var postDetailsViewModel = new PostDetailsModel()
@@ -302,6 +305,24 @@ namespace BlogErsen.Ui.Controllers
                 PostByComments=_postService.GetPostByComment()
             };
             return View(model);
+        }
+        [HttpPost]
+        public IActionResult UpdateComment(int CommentId, bool IsApproved)
+        {
+            var entity=_commentService.GetById(CommentId);
+          if (entity == null)
+            {
+                return NotFound();
+            }
+             if(entity!=null)
+            {
+                entity.IsApproved = IsApproved;
+                _commentService.Update(entity);
+                RedirectToAction("Comments");
+                return Json(new { success = true, message = "Yorum durumu başarıyla güncellendi" });
+
+            }
+            return View();  
         }
     }
 }

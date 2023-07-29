@@ -59,11 +59,24 @@ app.UseAuthorization();
 app.UseAuthentication();
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Admin}/{action=PostUpdate}/{id?}");
+    name: "Home",
+    pattern: "{controller=Home}/{action=Index}");
+
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    name: "AdminDetails",
+    pattern: "{controller=Admin}/{action=Details}/{id?}");
+
+app.MapControllerRoute(
+    name: "AdminPostUpdate",
+    pattern: "{controller=Admin}/{action=PostUpdate}/{id?}");
+app.MapControllerRoute(
+    name: "AdminUpdateComment",
+    pattern: "{controller=Admin}/{action=UpdateComment}/{id?}");
+
+
+
+
+
 
 app.Run();
