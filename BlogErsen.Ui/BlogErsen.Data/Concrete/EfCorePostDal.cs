@@ -20,6 +20,14 @@ namespace BlogErsen.Data.Concrete
             }
         }
 
+        public List<Post> GetPostByCategoryId(int categoryId)
+        {
+            using (var context =new BlogContext())
+            {
+                return context.Posts.Where(x => x.CategoryId == categoryId).ToList();
+            }
+        }
+
         public List<Post> GetPostByComment()
         {
             using (var context = new BlogContext())

@@ -42,6 +42,11 @@ namespace BlogUi.Business.Concrete
            return _postDal.GetById(id);
         }
 
+        public List<Post> GetPostByCategoryId(int categoryId)
+        {
+            return _postDal.GetPostByCategoryId(categoryId);
+        }
+
         public List<Post> GetPostByComment()
         {
             return _postDal.GetPostByComment();

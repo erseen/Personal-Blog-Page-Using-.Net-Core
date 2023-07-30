@@ -1,4 +1,4 @@
-﻿using DocumentFormat.OpenXml.Drawing.Diagrams;
+﻿using BlogErsen.Entity;
 
 namespace BlogErsen.Ui.ViewModels
 {

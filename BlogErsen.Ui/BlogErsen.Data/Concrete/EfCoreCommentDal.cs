@@ -12,6 +12,14 @@ namespace BlogErsen.Data.Concrete
     public class EfCoreCommentDal :
          EfCoreGenericDal<Comment, BlogContext>, ICommentDal
     {
+        public int GetAllCommentsCount()
+        {
+            using (var context =new BlogContext())
+            {
+                return context.Comments.Count();
+            }
+        }
+
         public List<Comment> GetApprovedComments()
         {
             using (var context=new BlogContext())

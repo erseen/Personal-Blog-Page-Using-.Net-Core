@@ -112,6 +112,7 @@ namespace BlogErsen.Ui.Controllers
             //};
             //chartDataList
             //// View'e verileri gönderin
+            ViewBag.TotalCommentsCount= _commentService.GetAllCommentsCount();
             ViewBag.TotalPostCount = _postService.GetAllPostCount();
             ViewBag.TotalCategoriesCount = _categoryService.GetAllCategoriesCount();
             return View();

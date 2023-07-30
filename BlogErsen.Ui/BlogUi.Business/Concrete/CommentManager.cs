@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace BlogUi.Business.Concrete
@@ -32,6 +33,11 @@ namespace BlogUi.Business.Concrete
         public List<Comment> GetAll()
         {
             return _commentDal.GetAll();
+        }
+
+        public int GetAllCommentsCount()
+        {
+            return _commentDal.GetAllCommentsCount();
         }
 
         public List<Comment> GetApprovedComments()

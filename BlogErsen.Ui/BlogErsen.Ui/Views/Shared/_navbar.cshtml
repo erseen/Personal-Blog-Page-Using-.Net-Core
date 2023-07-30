@@ -1,11 +1,10 @@
-﻿@model List<BlogErsen.Entity.Category>
-
+﻿
 <header>
    
 </header>
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top bg-transparent">
     <div class="container">
-        <a class="navbar-brand" href="#">BlogErsen</a>
+        <a class="navbar-brand" href="/Home/Index">BlogErsen</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -17,14 +16,10 @@
                         <a class="nav-link" asp-controller="admin" asp-action="panel">Panel</a>
                     </li>
                 }
-                @await Component.InvokeAsync("Categories");
-
-            buraya gelicek
-
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Anasayfa</a>
+                    <a class="nav-link" aria-current="page" href="/Home/Index">Anasayfa</a>
                 </li>
-
+                @await Component.InvokeAsync("Categories")
                 <li class="nav-item">
                     <a class="nav-link" href="#">Blog</a>
                 </li>

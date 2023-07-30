@@ -47,14 +47,22 @@ namespace BlogErsen.Ui.Controllers
             return View(postDetailsModel);
         
         }
-        [HttpGet]
-        public PartialViewResult SendCategoriestoNavbar()
-        {
+        //[HttpGet]
+        //public PartialViewResult SendCategoriestoNavbar()
+        //{
      
-            return PartialView("_navbar", _categoryService.GetAll());
+        //    return PartialView("_navbar", _categoryService.GetAll());
+        //}
+
+        public IActionResult GetPostByCategoryId(int id)
+        {
+            var postListViewModel = new PostViewModel()
+            {
+                Posts = _postService.GetPostByCategoryId(id)
+            };
+            return View(postListViewModel);
+
         }
-
-
         public IActionResult Register()
         {
             

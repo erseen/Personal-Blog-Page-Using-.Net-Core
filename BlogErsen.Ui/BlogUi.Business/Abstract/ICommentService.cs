@@ -17,5 +17,6 @@ namespace BlogUi.Business.Abstract
         List<Comment> GetApprovedComments();
 
         List<Comment> GetProvedCommentsByPostId(int postId);
+        int GetAllCommentsCount();
     }
 }
