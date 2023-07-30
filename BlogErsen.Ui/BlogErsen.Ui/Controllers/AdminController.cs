@@ -197,7 +197,9 @@ namespace BlogErsen.Ui.Controllers
         {
             var postDetailsViewModel = new PostDetailsModel()
             {
-                Post = _postService.GetById(id)
+                Post = _postService.GetById(id),
+                Comments=_commentService.GetProvedCommentsByPostId(id)  
+
             };
 
             return View(postDetailsViewModel);

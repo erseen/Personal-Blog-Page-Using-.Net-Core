@@ -15,5 +15,7 @@ namespace BlogUi.Business.Abstract
         void Update(Comment entity);
         void Delete(Comment entity);
         List<Comment> GetApprovedComments();
+
+        List<Comment> GetProvedCommentsByPostId(int postId);
     }
 }

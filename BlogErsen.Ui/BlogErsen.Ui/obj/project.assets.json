@@ -1136,7 +1136,6 @@
         "dependencies": {
           "BlogErsen.Entity": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0",
           "Microsoft.EntityFrameworkCore.Sqlite": "6.0.0"
         },
         "compile": {
@@ -1166,8 +1165,7 @@
         "dependencies": {
           "BlogErsen.Data": "1.0.0",
           "BlogErsen.Entity": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "6.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0"
+          "Microsoft.EntityFrameworkCore": "6.0.0"
         },
         "compile": {
           "bin/placeholder/BlogUi.Business.dll": {}

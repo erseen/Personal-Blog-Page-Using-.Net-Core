@@ -1,0 +1,106 @@
+﻿@model PostDetailsModel
+<style>
+    img {
+        height: 200px;
+        width: 100%;
+    }
+
+    h1 {
+    }
+
+</style>
+<div class="row">
+    <h1 align="center">@Model.Post.PostTitle </h1>
+    <hr />
+
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <img src="/img/@Model.Post.PostImageUrl" />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        @Html.Raw(Model.Post.Postcontent)
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header " align="center">
+            Bir Cevap Yazın
+        </div>
+        <div class="card-body">
+            <form id="commentForm">
+                <div class="form-group">
+                    <label for="name">Adınız:</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Adınızı girin">
+                </div>
+                <div class="form-group">
+                    <label for="comment">Yorumunuz:</label>
+                    <textarea class="form-control" id="comment" name="commentText" rows="3" placeholder="Yorumunuzu girin"></textarea>
+                </div>
+                <button type="button" class="btn btn-primary mt-4" onclick="submitComment()">Yorumu Gönder</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <h2>Yorumlar</h2>
+        <ul class="list-group" id="commentList">
+            <!-- Yorumlar burada dinamik olarak listelenecek -->
+            @foreach (var comment in Model.Comments)
+            {
+                <div class="row">
+                    <div class="col-md-3">
+                        @comment.Name
+                    </div>
+                    <div class="col-md-6">
+                        @comment.CommendText
+                    </div>
+                </div>
+            }
+        </ul>
+    </div>
+</div>
+<script>
+    function submitComment() {
+        var name = document.getElementById("name").value;
+        var commentText = document.getElementById("comment").value;
+        var postId = @Model.Post.PostId; // Razor ile PostId değerini alın
+
+        // CommendText boş olamaz, kontrol edin
+        if (!commentText.trim()) {
+            alert("Yorumunuzu girin");
+            return;
+        }
+
+        // AJAX isteği için verileri hazırlayın
+        var data = {
+            postId: postId,
+            name: name,
+            commentText: commentText
+        };
+
+        // AJAX isteğini gönderin
+        $.ajax({
+            url: '/Admin/AddComment',
+            type: 'POST',
+            data: data,
+            success: function (result) {
+                if (result.success) {
+                    alert(result.message); // Başarılı mesajı gösterin
+
+                    // Yorum eklemesi başarılıysa, sayfayı yenileyebilir veya yeni yorumları listelemek için başka işlemler yapabilirsiniz.
+                    // Örneğin, sayfayı yenilemek için:
+                    location.reload();
+                } else {
+                    alert('Yorum eklenirken bir hata oluştu.'); // Hata mesajı gösterin
+                }
+            },
+            error: function () {
+                alert('Yorum eklenirken bir hata oluştu.'); // Hata mesajı gösterin
+            }
+        });
+    }
+</script>

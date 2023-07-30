@@ -44,6 +44,11 @@ namespace BlogUi.Business.Concrete
             return _commentDal.GetById(id);
         }
 
+        public List<Comment> GetProvedCommentsByPostId(int postId)
+        {
+            return _commentDal.GetProvedCommentsByPostId(postId);
+        }
+
         public void Update(Comment entity)
         {
             _commentDal.Update(entity);

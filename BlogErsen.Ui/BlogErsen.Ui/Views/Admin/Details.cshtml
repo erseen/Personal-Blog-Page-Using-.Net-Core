@@ -52,6 +52,17 @@ h1{
         <h2>Yorumlar</h2>
         <ul class="list-group" id="commentList">
             <!-- Yorumlar burada dinamik olarak listelenecek -->
+            @foreach (var comment in Model.Comments)
+            {
+                <div class="row">
+                    <div class="col-md-3">
+                        @comment.Name
+                    </div>
+                    <div  class="col-md-6">
+                        @comment.CommendText
+                    </div>
+                </div>
+            }
         </ul>
     </div>
 </div>

@@ -10,8 +10,7 @@ namespace BlogErsen.Data.Abstract
     public interface ICommentDal:IGenericDal<Comment>
     {
         List<Comment> GetApprovedComments();
-
-
-
+        List<Comment> GetProvedCommentsByPostId(int postId);
+       
     }
 }
