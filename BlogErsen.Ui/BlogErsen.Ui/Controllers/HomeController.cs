@@ -25,6 +25,7 @@ namespace BlogErsen.Ui.Controllers
             _categoryService=categoryService;
              
         }
+     
         public IActionResult Index()
         {
             var postViewModel = new PostViewModel
@@ -32,8 +33,6 @@ namespace BlogErsen.Ui.Controllers
                 Posts = _postService.GetAll()
 
             };
-         
-            
             return View(postViewModel);
         }
         public IActionResult Details(int id) 

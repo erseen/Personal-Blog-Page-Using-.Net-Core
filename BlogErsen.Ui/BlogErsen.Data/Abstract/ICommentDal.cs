@@ -12,6 +12,7 @@ namespace BlogErsen.Data.Abstract
         List<Comment> GetApprovedComments();
         List<Comment> GetProvedCommentsByPostId(int postId);
         int GetAllCommentsCount();
+        int GetProvenCommentCount();
        
     }
 }

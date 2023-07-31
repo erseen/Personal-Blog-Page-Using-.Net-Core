@@ -1,0 +1,44 @@
+﻿@model CategoryListViewModel
+
+
+@{
+    Layout = "_Layout3";
+}
+<a href="/Admin/CreateCategory" class="btn btn-primary">Kategori Ekle</a>
+
+<div class="list-group">
+        <table class="table">
+        <thead class="thead-light">
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Kategori İsmi</th>
+                    <th scope="col">Düzenle</th>
+                    <th scope="col">Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+            @{var counter = 1;}
+            @foreach (var category in Model.Categories)
+            {
+                <tr>
+                    <th scope="row">@counter</th>
+                    <td>@category.CategoryName</td>
+                    <td>
+                        <a asp-controller="Admin" asp-action="UpdateCategory" asp-route-id="@category.CategoryId" class="btn btn-primary">Düzenle </a>
+                    </td>
+                    
+                    
+                    <td>
+                    <form method="post" asp-controller="Admin" asp-action="DeleteCategory" asp-route-id="@category.CategoryId">
+                      <button type="submit" class="btn btn-danger">Sil</button>
+                    </form>
+                   
+                    
+                    </td>
+                </tr>
+                counter ++;
+            }
+            </tbody>
+        </table>
+</div>
+  

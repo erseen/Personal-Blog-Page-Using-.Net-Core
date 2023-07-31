@@ -58,25 +58,31 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.UseAuthentication();
 
+
 app.MapControllerRoute(
     name: "Home",
     pattern: "{controller=Home}/{action=Index}");
 
 
 app.MapControllerRoute(
-    name: "AdminDetails",
-    pattern: "{controller=Admin}/{action=Details}/{id?}");
+    name: "AdminDeleteCategory",
+    pattern: "{controller=Admin}/{action=DeleteCategory}/{id?}");
 
 app.MapControllerRoute(
     name: "AdminPostUpdate",
     pattern: "{controller=Admin}/{action=PostUpdate}/{id?}");
+
 app.MapControllerRoute(
     name: "AdminUpdateComment",
     pattern: "{controller=Admin}/{action=UpdateComment}/{id?}");
 
+app.MapControllerRoute(
+    name: "AdminDetails",
+    pattern: "{controller=Admin}/{action=Details}/{id?}");
 
-
-
+app.MapControllerRoute(
+    name: "AdminUpdateCategory",
+    pattern: "{controller=Admin}/{action=UpdateCategory}/{id?}");
 
 
 app.Run();

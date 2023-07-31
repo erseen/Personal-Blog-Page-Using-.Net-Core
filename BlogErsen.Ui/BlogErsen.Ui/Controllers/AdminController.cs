@@ -115,6 +115,7 @@ namespace BlogErsen.Ui.Controllers
             ViewBag.TotalCommentsCount= _commentService.GetAllCommentsCount();
             ViewBag.TotalPostCount = _postService.GetAllPostCount();
             ViewBag.TotalCategoriesCount = _categoryService.GetAllCategoriesCount();
+            ViewBag.ProvenCommentsCount = _commentService.GetProvenCommentCount();
             return View();
         }
         public async Task <IActionResult> Logout ()
@@ -190,10 +191,6 @@ namespace BlogErsen.Ui.Controllers
             }
             return View();
         }
-       
-        
-        
-       
         public IActionResult Details(int id ) 
         {
             var postDetailsViewModel = new PostDetailsModel()
@@ -205,9 +202,6 @@ namespace BlogErsen.Ui.Controllers
 
             return View(postDetailsViewModel);
         }
-       
-        
-        
         [HttpGet]
         public IActionResult PostUpdate(int id )
         {
@@ -327,5 +321,78 @@ namespace BlogErsen.Ui.Controllers
             }
             return View();  
         }
+        public IActionResult CategoryList()
+        {
+            var categoryListViewModel = new CategoryListViewModel()
+            {
+                Categories = _categoryService.GetAll(),
+            };
+            ViewBag.TotalCategories = _categoryService.GetAllCategoriesCount();
+
+            return View(categoryListViewModel);
+        }
+        [HttpGet]
+        public IActionResult CreateCategory()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public IActionResult CreateCategory(CategoryModel model )
+        {
+         if (ModelState.IsValid)
+            {
+                var entity = new Category();
+                entity.CategoryName = model.Name;
+                _categoryService.Create(entity);
+                return RedirectToAction("CategoryList");
+
+            }
+               
+            return View(model);
+        }
+        [HttpPost]
+        public IActionResult DeleteCategory(int id ) 
+        {
+            var entity = _categoryService.GetById(id);
+            if (entity!=null)
+            {
+                _categoryService.Delete(entity);
+                return RedirectToAction("CategoryList");
+
+            }
+            return View();
+        }
+        [HttpGet]
+        public IActionResult UpdateCategory(int id)
+        {
+            var entity = _categoryService.GetById(id);
+            if (entity==null)
+            {
+
+                return NotFound();
+            }
+            var categoryModel=new CategoryModel()
+            {   CategoryId = entity.CategoryId,
+                Name=entity.CategoryName
+            
+            };
+
+            return View(categoryModel);
+        }
+        [HttpPost]
+        public IActionResult UpdateCategory(CategoryModel model)
+        {
+            var entity = _categoryService.GetById(model.CategoryId);
+            if (entity==null)
+            {
+                return NotFound();
+            }
+            entity.CategoryName = model.Name;
+            _categoryService.Update(entity);
+            return RedirectToAction("CategoryList");
+        }
+
+
     }
 }
