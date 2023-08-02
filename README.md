@@ -10,6 +10,9 @@ My personel blog site made in .Net Core
 [![ScreenShot4](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/4-small.png?raw=true)](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/4.png?raw=true)
 <br>
 [![ScreenShot5](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/5-small.png?raw=true)](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/5.png?raw=true)
+[![ScreenShot6](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/6-small.png?raw=true)](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/6.png?raw=true)
+
+[![ScreenShot5](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/7-small.png?raw=true)](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/7.png?raw=true)
 
 <h2>Project Description</h2>
 
