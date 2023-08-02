@@ -25,7 +25,7 @@ Some of pictures about project
 <h2>Technologies Used</h2>
 
 <ul>
-  <li>.NET Core: Entity Framework Core, Entity Framework Core Design, Entity Framework Core Tools,Repository Design Pattern</li>
+  <li>.NET Core: Entity Framework Core, Entity Framework Core Design, Entity Framework Core Tools,Repository Design Pattern,Linq</li>
   <li>jQuery :Data Picker</li>
   <li>Ajax</li>
   <li>Bootstrap</li>
