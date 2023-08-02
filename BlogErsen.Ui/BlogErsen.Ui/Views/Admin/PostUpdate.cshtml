@@ -30,37 +30,23 @@
 </head>
 <body>
     <div class="container">
-        @*  Kayıt Başarılıysa success değilse alert döner*@
-        @if (message == "success")
-        {
-                <div class="alert alert-success" role="alert">
-                  Kayıt Başarılı bir şekilde gerçekleşti
-                </div>
 
-        }
-        @if (message == "danger")
-        {
-                <div class="alert alert-danger" role="alert">
-                    Kayıt Yapılırken Bir Hata Oluştu
-                </div>
-        }
-
-        <h2 align="center">Paylaş</h2>
+        <h2 align="center">Post Update</h2>
         <form method="post"  asp-action="PostUpdate" asp-controller="Admin" enctype="multipart/form-data">
             <input type="hidden" name="PostId" value="@(Model?.PostId)" />
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="mb-3">
-                <label for="PostTitle" class="form-label">Başlık</label>
+                <label for="PostTitle" class="form-label">Post Title</label>
                 <input type="text" asp-for="PostTitle" class="form-control" id="PostTitle" name="PostTitle" required>
                 <span asp-validation-for="PostTitle"></span>
             </div>
             <div class="mb-3">
-                <label for="PostContent" class="form-label">Konu Özeti</label>
+                <label for="PostContent" class="form-label">Topic Summary</label>
                 <textarea class="form-control" asp-for="PostShortDescription" name="PostShortDescription" rows="4" required></textarea>
                 <span asp-validation-for="Postcontent"></span>
             </div>
             <div class="mb-3">
-                <label for="PostContent" class="form-label">Konu İçeriği</label>
+                <label for="PostContent" class="form-label">Post Content</label>
                 <textarea class="form-control" asp-for="Postcontent" id="editor" name="PostContent" rows="4" required></textarea>
                 <span asp-validation-for="Postcontent"></span>
             </div>
@@ -78,14 +64,14 @@
 
             @* Image Tarafı*@ 
             <div class="mb-3">
-                <label for="PostPublishedDate" class="form-label">Paylaşım Zamanı</label>
+                <label for="PostPublishedDate" class="form-label">Published Date</label>
                 <input type="text" asp-for="PostPublishedDate" class="form-control" id="PostPublishedDate" name="PostPublishedDate" required>
                 <span asp-validation-for="PostPublishedDate"></span>
             </div>
 
             <div class="mb-3">
                 <select class="form-control" asp-for="CategoryId">
-                 <label class="form-label">Kategori</label>
+                 <label class="form-label">Category</label>
                     <option value="">Current Category: @ViewBag.CurrentCategory</option>
                     @foreach (var category in ViewBag.Categories)
                     {
@@ -94,7 +80,7 @@
 
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">Kaydet</button>
+            <button type="submit" class="btn btn-primary">Save</button>
         </form>
     </div>
     <!-- Bootstrap JS -->

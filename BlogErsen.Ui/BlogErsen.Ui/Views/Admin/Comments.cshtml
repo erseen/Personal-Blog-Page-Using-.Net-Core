@@ -4,17 +4,17 @@
     var postByComment=Model.PostByComments; 
 }
 
-<h4 align="center"> Yorumlar </h4>
+<h4 align="center"> Comments </h4>
 
 
     <table class="table table-hover">
         <thead>
             <tr>
-                <th scope="col">Post Başlığı</th>
-                <th scope="col">Post Özeti</th>
-                <th scope="col">İsim</th>
-                <th scope="col">Yorum</th>
-                <th scope="col">Anasayfada Göster</th>
+                <th scope="col">Post Title</th>
+                <th scope="col">Post Summary</th>
+                <th scope="col">Name</th>
+                <th scope="col">Comment Text</th>
+                <th scope="col">Show in homepage</th>
             </tr>
         </thead>
         <tbody>
@@ -29,17 +29,11 @@
                 <td>@comment.Name</td>
                 <td><textarea class="form-control" rows="2" required>@comment.CommendText</textarea></td>
                 <td>
- 
-                 @*   <form id="updateCommentForm">
-                        <input type="checkbox"  asp-for="@comment.IsApproved" id="IsApprovedCheckbox" class="custom-control-input">
-                        <label for="IsApprovedCheckbox" class="custom-control-label"></label>
-                        <button type="button" class="btn btn-primary" onclick="submitComment()" align="center">Kaydet</button>
-                    </form>*@
 
                     <form id="updateCommentForm-@commendId">
                         <input type="checkbox" asp-for="@comment.IsApproved" id="IsApprovedCheckbox-@commendId" class="custom-control-input">
                         <label for="IsApprovedCheckbox-@commendId" class="custom-control-label"></label>
-                        <button type="button" class="btn btn-primary" onclick="submitComment('@commendId')" align="center">Kaydet</button>
+                        <button type="button" class="btn btn-primary" onclick="submitComment('@commendId')" align="center">Save</button>
                     </form>
                 </td>
             </tr>
@@ -47,32 +41,30 @@
             }
         <script>
             function submitComment(commentId) {
-                var isApproved = $(`#IsApprovedCheckbox-${commentId}`).is(':checked'); // Checkbox durumunu alın
+                var isApproved = $(`#IsApprovedCheckbox-${commentId}`).is(':checked'); 
 
-                // AJAX isteği için verileri hazırlayın
+               
                 var data = {
                     CommentId: commentId,
                     IsApproved: isApproved
                 };
 
-                // AJAX isteğini gönderin
+               
                 $.ajax({
                     url: '/Admin/UpdateComment',
                     type: 'POST',
                     data: data,
                     success: function (result) {
                         if (result.success) {
-                            alert(result.message); // Başarılı mesajı gösterin
+                            alert(result.message); 
 
-                            // Yorum eklemesi başarılıysa, sayfayı yenileyebilir veya yeni yorumları listelemek için başka işlemler yapabilirsiniz.
-                            // Örneğin, sayfayı yenilemek için:
                             location.reload();
                         } else {
-                            alert('Yorum güncelleme işlemi sırasında bir hata oluştu.'); // Hata mesajı gösterin
+                            alert('Error.'); 
                         }
                     },
                     error: function () {
-                        alert('Yorum güncelleme işlemi sırasında bir hata oluştu.'); // Hata mesajı gösterin
+                        alert('Error'); 
                     }
                 });
             }

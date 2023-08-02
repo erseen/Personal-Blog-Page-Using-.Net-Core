@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LhEIRyGiOYEzEfSgao4UG8EQYHjEdXb4LiavCUXlzN4=",
+  "Hash": "9E7zbDv3HZzrY9HByMn7Rcda8hDdXB0Z2Bxz+gDeaZE=",
   "Source": "BlogErsen.Ui",
   "BasePath": "_content/BlogErsen.Ui",
   "Mode": "Default",
@@ -1018,6 +1018,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\background.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\img\\e94df7c2-7c9e-4de9-b3aa-54116f58cd9f.jpg",
+      "SourceId": "BlogErsen.Ui",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\",
+      "BasePath": "_content/BlogErsen.Ui",
+      "RelativePath": "img/e94df7c2-7c9e-4de9-b3aa-54116f58cd9f.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\e94df7c2-7c9e-4de9-b3aa-54116f58cd9f.jpg"
     },
     {
       "Identity": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\img\\eaf12e37-dfaa-4854-8380-b7a468642ab0.jpg",

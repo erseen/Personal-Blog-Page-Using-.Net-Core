@@ -14,9 +14,9 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">@post.PostTitle</h5>
-                    <h6 class="card-text"> Yayımlanma Tarihi : @post.PostPublishedDate</h6>
-                    <p> Konu Özeti @post.PostShortDescription</p>
-                    <a asp-controller="Home" asp-action="Details" asp-route-id="@post.PostId" class="btn btn-primary btn-sm">Devamını Oku </a>
+                    <h6 class="card-text"> Published Date : @post.PostPublishedDate</h6>
+                    <p> Post Summary: @post.PostShortDescription</p>
+                    <a asp-controller="Home" asp-action="Details" asp-route-id="@post.PostId" class="btn btn-primary btn-sm">Details </a>
                 </div>
             </div>
         </div>

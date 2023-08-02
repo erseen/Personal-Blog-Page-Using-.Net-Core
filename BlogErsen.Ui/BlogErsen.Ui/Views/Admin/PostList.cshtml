@@ -3,7 +3,7 @@
     Layout = "_Layout3";
 }
 
-<a href="/Admin/CreatePost" class="btn btn-primary mb-3 ">Post Ekle</a>
+<a href="/Admin/CreatePost" class="btn btn-primary mb-3 ">Add Post</a>
 
 <div class="row">
     @foreach (var post in Model.Posts)
@@ -15,13 +15,13 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">@post.PostTitle</h5>
-                    <h6 class="card-text"> Yayımlanma Tarihi : @post.PostPublishedDate</h6>
-                    <p> Konu Özeti @post.PostShortDescription</p>
-                    <a asp-controller="Admin" asp-action="Details" asp-route-id="@post.PostId" class="btn btn-primary btn-sm">Devamını Oku </a>
-                    <a href="/Admin/PostUpdate/@post.PostId" class="btn btn-primary btn-sm mr-2">Duzenle</a>
+                    <h6 class="card-text"> Published Date : @post.PostPublishedDate</h6>
+                    <p> Topic Summary @post.PostShortDescription</p>
+                    <a asp-controller="Admin" asp-action="Details" asp-route-id="@post.PostId" class="btn btn-primary btn-sm">Details </a>
+                    <a href="/Admin/PostUpdate/@post.PostId" class="btn btn-primary btn-sm mr-2">Edit</a>
                     <form method="POST" action="/Admin/DeletePost" style="display: inline;">
                         <input type="hidden" name="PostId" value="@post.PostId">
-                        <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                     </form>
                 </div>
             </div>

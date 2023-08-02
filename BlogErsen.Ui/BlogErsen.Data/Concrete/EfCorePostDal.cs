@@ -46,6 +46,8 @@ namespace BlogErsen.Data.Concrete
         {
             using (var context=new BlogContext())
             {
+              
+
                 var result = context.Posts.Where(x => x.Postcontent.ToLower().Contains(q.ToLower()) ||
                 x.PostTitle.ToLower().Contains(q.ToLower())
                 || x.PostShortDescription.ToLower().Contains(q.ToLower())).AsQueryable();

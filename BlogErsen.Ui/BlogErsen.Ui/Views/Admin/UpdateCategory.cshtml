@@ -2,16 +2,16 @@
 @{
     Layout = "_Layout3";
 }
-<h4 align="center">Kategori Güncelle</h4>
+<h4 align="center">Update Category</h4>
 <div class="col-md-6">
     <form method="post" asp-controller="Admin" asp-action="UpdateCategory" asp-route-id="@Model.CategoryId">
         
         <div asp-validation-summary="All" style="color:red;"></div>
         <input type="hidden" name="CategoryId" value="@(Model.CategoryId)" />
-        <label for="Name" class="form-label">Kategori Adı</label>
+        <label for="Name" class="form-label">Category Name </label>
         <input type="text" asp-for="Name" class="form-control" name="Name" required>
         <span asp-validation-for="Name"></span>
-        <button type="submit" class="btn btn-primary mt-3">Kaydet</button>
+        <button type="submit" class="btn btn-primary mt-3">Save</button>
     </form>
 
 </div>
