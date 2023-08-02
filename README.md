@@ -1,6 +1,5 @@
 # BlogErsen
 My personel blog site made in .Net Core 
-[aSSALAMU ALAYKUM:](1.png)
 
 [![ScreenShot1](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/1-small.png?raw=true)](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/1.png?raw=true)
 <br>
