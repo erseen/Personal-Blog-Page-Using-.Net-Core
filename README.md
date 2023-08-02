@@ -1,6 +1,9 @@
 # BlogErsen
 My personel blog site made in .Net Core 
 
+Some of pictures about project
+<br>
+<br>
 [![ScreenShot1](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/1-small.png?raw=true)](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/1.png?raw=true)
 <br>
 [![ScreenShot2](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/2-small.png?raw=true)](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/2.png?raw=true)
@@ -10,9 +13,10 @@ My personel blog site made in .Net Core
 [![ScreenShot4](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/4-small.png?raw=true)](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/4.png?raw=true)
 <br>
 [![ScreenShot5](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/5-small.png?raw=true)](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/5.png?raw=true)
+<br>
 [![ScreenShot6](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/6-small.png?raw=true)](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/6.png?raw=true)
-
-[![ScreenShot5](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/7-small.png?raw=true)](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/7.png?raw=true)
+<br>
+[![ScreenShot7](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/7-small.png?raw=true)](https://github.com/ersen06/BlogErsen/blob/main/BlogErsen.Ui/screenshots/7.png?raw=true)
 
 <h2>Project Description</h2>
 
@@ -25,6 +29,7 @@ My personel blog site made in .Net Core
   <li>jQuery :Data Picker</li>
   <li>Ajax</li>
   <li>Bootstrap</li>
+  <li>Database :Sqlite</li>
 </ul>
 
 <h5>This project can have many more features added in the future, but I hope this version serves its purpose.</h5>
