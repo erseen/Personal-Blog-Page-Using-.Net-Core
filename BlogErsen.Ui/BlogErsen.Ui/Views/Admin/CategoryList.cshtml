@@ -5,7 +5,6 @@
     Layout = "_Layout3";
 }
 <a href="/Admin/CreateCategory" class="btn btn-primary">Kategori Ekle</a>
-
 <div class="list-group">
         <table class="table">
         <thead class="thead-light">
@@ -26,14 +25,10 @@
                     <td>
                         <a asp-controller="Admin" asp-action="UpdateCategory" asp-route-id="@category.CategoryId" class="btn btn-primary">Düzenle </a>
                     </td>
-                    
-                    
                     <td>
                     <form method="post" asp-controller="Admin" asp-action="DeleteCategory" asp-route-id="@category.CategoryId">
                       <button type="submit" class="btn btn-danger">Sil</button>
                     </form>
-                   
-                    
                     </td>
                 </tr>
                 counter ++;

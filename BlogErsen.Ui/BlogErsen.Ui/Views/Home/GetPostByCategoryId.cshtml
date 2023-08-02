@@ -1,9 +1,24 @@
 ﻿@model PostViewModel
+@{
+    var postCount = Model.Posts.Count();
+}
 
+    @if (postCount == 0)
+    {
+            <div class="row mt-4">
+        <div class="alert alert-warning" role="alert">
+            Bu kategori ile ilgili herhangi bir post yok
+        </div>
+            </div>
+
+    }
+    else
+    {
 <div class="row">
     @foreach (var post in Model.Posts)
     {
-        <div class="col-md-4 mb-4">
+     
+        <div class="col-md-4 mb-4 mt-3">
             <div class="card">
                 <div class="d-flex align-items-center">
                     <img class="img-fluid" src="~/img/@post.PostImageUrl" alt="@post.PostTitle">
@@ -19,3 +34,4 @@
     }
 
 </div>
+}

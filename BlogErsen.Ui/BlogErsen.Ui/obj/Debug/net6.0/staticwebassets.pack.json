@@ -221,6 +221,14 @@
       "PackagePath": "staticwebassets\\img\\9896161f-3764-4f85-bb18-20d5d6182cd0.jpg"
     },
     {
+      "Id": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\img\\anonim.png",
+      "PackagePath": "staticwebassets\\img\\anonim.png"
+    },
+    {
+      "Id": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\img\\arkaplan.jpg",
+      "PackagePath": "staticwebassets\\img\\arkaplan.jpg"
+    },
+    {
       "Id": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\img\\background.jpg",
       "PackagePath": "staticwebassets\\img\\background.jpg"
     },
@@ -231,6 +239,22 @@
     {
       "Id": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\img\\f912ac65-bfa0-4a99-834f-3d78461ab8fd.jpg",
       "PackagePath": "staticwebassets\\img\\f912ac65-bfa0-4a99-834f-3d78461ab8fd.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\img\\homepic.jpg",
+      "PackagePath": "staticwebassets\\img\\homepic.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\img\\pic1.jpg",
+      "PackagePath": "staticwebassets\\img\\pic1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\img\\pic2.jpg",
+      "PackagePath": "staticwebassets\\img\\pic2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\img\\pic3.jpg",
+      "PackagePath": "staticwebassets\\img\\pic3.jpg"
     },
     {
       "Id": "C:\\Users\\ersen\\Desktop\\BlogErsen\\BlogErsen.Ui\\BlogErsen.Ui\\wwwroot\\img\\walpaper.jpg",

@@ -52,6 +52,11 @@ namespace BlogUi.Business.Concrete
             return _postDal.GetPostByComment();
         }
 
+        public List<Post> GetSearchResult(string q)
+        {
+           return  _postDal.GetSearchResult(q);    
+        }
+
         public void Update(Post entity)
         {
             _postDal.Update(entity);

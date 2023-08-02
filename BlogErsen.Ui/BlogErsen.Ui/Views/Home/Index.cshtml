@@ -1,5 +1,9 @@
 ﻿@model PostViewModel
 
+@await Html.PartialAsync("_slider")
+
+
+
 <div class="row m-5">
     @foreach (var post in Model.Posts)
     {
@@ -17,5 +21,4 @@
             </div>
         </div>
     }
-
 </div>

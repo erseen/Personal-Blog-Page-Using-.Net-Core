@@ -18,5 +18,7 @@ namespace BlogUi.Business.Abstract
         int GetAllPostCount();
         List<Post> GetPostByComment();
         List<Post> GetPostByCategoryId(int categoryId);
+        List<Post> GetSearchResult(string q);
+
     }
 }

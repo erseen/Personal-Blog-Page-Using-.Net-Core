@@ -46,13 +46,6 @@ namespace BlogErsen.Ui.Controllers
             return View(postDetailsModel);
         
         }
-        //[HttpGet]
-        //public PartialViewResult SendCategoriestoNavbar()
-        //{
-     
-        //    return PartialView("_navbar", _categoryService.GetAll());
-        //}
-
         public IActionResult GetPostByCategoryId(int id)
         {
             var postListViewModel = new PostViewModel()
@@ -67,6 +60,16 @@ namespace BlogErsen.Ui.Controllers
             
             return View(); 
         }
+        public IActionResult Search(string q )
+        {
+            var postViewModel = new PostViewModel()
+            {
+                Posts = _postService.GetSearchResult(q)
+            };
+
+            return View(postViewModel);
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
